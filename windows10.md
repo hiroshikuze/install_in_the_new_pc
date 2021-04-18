@@ -1,8 +1,3 @@
----
-title: Windows 10 HomeやProfessionalにおいて行う設定やインストールしたいソフト
-description: 新しいWindows 10のHomeやProfessionalのPCを買ったときにインストールしたいソフトや設定のまとめです
----
-
 # Windows 10 HomeやProfessionalにおいて行う設定やインストールしたいソフト
 
 新しいWindows 10のHomeやProfessionalが入ったPCを買ったときにインストールしたいソフトや設定のまとめです
