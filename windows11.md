@@ -2,6 +2,51 @@
 
 新しいWindows 11のHomeやProfessionalが入ったPCを買ったときにインストールしたいソフトや設定のまとめです（2026年3月時点）
 
+## コマンドで一括インストール（winget）
+
+Windows 11には **winget**（Windowsパッケージマネージャー）が標準搭載されており、ブラウザでダウンロードページを探す手間なくソフトをインストールできます。
+
+PowerShell またはターミナルを**管理者として実行**し、以下をまとめて貼り付けると「自分としては必須設定」のソフトを一括インストールできます。
+
+```powershell
+# Windows機能の有効化
+wsl --install
+dism /online /Enable-Feature /FeatureName:TelnetClient /NoRestart
+dism /online /Enable-Feature /FeatureName:VirtualMachinePlatform /All /NoRestart
+
+# ソフトウェアの一括インストール
+winget install --id Google.Chrome           -e --silent
+winget install --id Microsoft.VisualStudioCode -e --silent
+winget install --id WinMerge.WinMerge       -e --silent
+winget install --id voidtools.Everything    -e --silent
+winget install --id 7zip.7zip               -e --silent
+winget install --id SakuraEditor.SakuraEditor -e --silent
+winget install --id dotPDN.PaintDotNet      -e --silent
+
+# VS Code拡張機能
+code --install-extension ICS.japanese-proofreading
+code --install-extension shardulm94.trailing-spaces
+```
+
+> パッケージIDは `winget search <ソフト名>` で検索して確認できます。
+
+任意インストール分は以下の通りです。
+
+```powershell
+winget install --id LINE.LINE               -e --silent
+winget install --id Zoom.Zoom               -e --silent
+winget install --id Apple.iCloud            -e --silent
+winget install --id Automattic.Simplenote   -e --silent
+winget install --id Google.GoogleDrive      -e --silent
+winget install --id JGraph.Draw             -e --silent
+```
+
+> **wingetで対応していないもの**
+> - CLCL（winget未対応のため[公式サイト](https://www.nakka.com/soft/clcl/)からダウンロード）
+> - Chrome Remote Desktop（Chromeの[拡張機能ページ](https://remotedesktop.google.com/access)からインストール）
+
+---
+
 ## 基本設定
 
 1. 回復ドライブ用のUSBメモリ16GBをあらかじめ用意する
@@ -26,45 +71,45 @@
 
 ## 自分としては必須設定
 
-1. Windowsの機能有効化
-    ・Linux用Windowsサブシステム（WSL2がデフォルト。インストール後 `wsl --install` でUbuntu等を導入可能）
-    ・Telnetクライアント
-    ・仮想マシンプラットフォーム
+1. Windowsの機能有効化（→[一括コマンド参照](#コマンドで一括インストールwinget)）
+    ・Linux用Windowsサブシステム：`wsl --install`
+    ・Telnetクライアント：`dism /online /Enable-Feature /FeatureName:TelnetClient /NoRestart`
+    ・仮想マシンプラットフォーム：`dism /online /Enable-Feature /FeatureName:VirtualMachinePlatform /All /NoRestart`
 1. **不要なスタートアップ・機能の整理**
-    ・Copilot（不要であれば設定→Copilotからオフ）
-    ・OneDriveの自動バックアップ（不要であれば設定から無効化）
-    ・ウィジェット（不要であれば設定からオフ）
-1. [Chrome](https://www.google.com/intl/ja_jp/chrome/)インストール
+    ・Copilot（不要であれば 設定→Copilot からオフ）
+    ・OneDriveの自動バックアップ（不要であれば 設定→OneDrive から無効化）
+    ・ウィジェット（不要であれば 設定→個人用設定→タスクバー からオフ）
+1. [Chrome](https://www.google.com/intl/ja_jp/chrome/)インストール（`winget install --id Google.Chrome -e`）
 1. 既存のブラウザをChromeにする
 1. タスクバーにChrome追加
 1. Chromeが英語になっていたら日本語化
-1. Chrome remote desktopインストール
-1. [Visual Studio Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)導入
-    拡張機能の導入
-    ・[テキスト校正くん](https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading)インストール
-    ・[Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)インストール
-1. [WinMerge](https://winmergejp.bitbucket.io/)インストール
-1. [Everything](https://forest.watch.impress.co.jp/library/software/everything/)インストール
-1. [CLCL](https://www.nakka.com/soft/clcl/)インストール
+1. Chrome Remote Desktopインストール（Chromeの[拡張機能ページ](https://remotedesktop.google.com/access)から）
+1. [Visual Studio Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)導入（`winget install --id Microsoft.VisualStudioCode -e`）
+    拡張機能の導入（`code --install-extension` で一括インストール可能）
+    ・[テキスト校正くん](https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading)：`code --install-extension ICS.japanese-proofreading`
+    ・[Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)：`code --install-extension shardulm94.trailing-spaces`
+1. [WinMerge](https://winmergejp.bitbucket.io/)インストール（`winget install --id WinMerge.WinMerge -e`）
+1. [Everything](https://forest.watch.impress.co.jp/library/software/everything/)インストール（`winget install --id voidtools.Everything -e`）
+1. [CLCL](https://www.nakka.com/soft/clcl/)インストール（winget未対応のため公式サイトから）
 1. 圧縮・展開ソフトインストール
     ※Windows 11 22H2以降はエクスプローラーで7z・tar・rarなどを標準で展開可能。ZIP作成も標準対応のため、用途によっては追加ソフト不要。
-    （必要なら[7-Zip](https://sevenzip.osdn.jp/)など）
-1. 軽量エディタインストール
-    （たとえば[サクラエディタ](https://sakura-editor.github.io/)）
-1. 軽量お絵かきソフト
-    （たとえば[Paint.NET](https://www.getpaint.net/)）
+    （必要なら[7-Zip](https://sevenzip.osdn.jp/)：`winget install --id 7zip.7zip -e`）
+1. 軽量エディタインストール（`winget install --id SakuraEditor.SakuraEditor -e`）
+1. 軽量お絵かきソフト（`winget install --id dotPDN.PaintDotNet -e`）
 
 > **Windows 10との主な違い**
-> - WSL2がデフォルトになり、Microsoft Storeからも各Linuxディストリビューションを直接インストール可能
-> - ZIP以外の圧縮形式（7z・tar・rar等）がエクスプローラーで標準展開可能になったため、Lhasa等が不要になるケースが多い
+> - WSL2がデフォルトになり、`wsl --install` 一発でUbuntuまで導入完了
+> - WindowsのdismコマンドやPowerShellでWindows機能を有効化できる
+> - VS Code拡張機能は `code --install-extension` でCLIインストール可能
+> - ZIP以外の圧縮形式（7z・tar・rar等）がエクスプローラーで標準展開可能になったためLhasa等が不要になるケースが多い
 > - CopilotやOneDrive自動バックアップ等、不要な機能を意図的にオフにする手順が増えた
 
 ## PCによって要りそうならインストール
 
-1. [Windows用LINE](https://line.me/ja/)インストール
-1. [Zoomクライアント](https://zoom.us/jp-jp/meetings.html)インストール
-1. [iCloud](https://support.apple.com/ja-jp/HT204283)インストール
-1. [Simplenote](https://simplenote.com/)インストール
-1. [Google Drive for Desktop](https://www.google.com/intl/ja/drive/download/)インストール
+1. [Windows用LINE](https://line.me/ja/)インストール（`winget install --id LINE.LINE -e`）
+1. [Zoomクライアント](https://zoom.us/jp-jp/meetings.html)インストール（`winget install --id Zoom.Zoom -e`）
+1. [iCloud](https://support.apple.com/ja-jp/HT204283)インストール（`winget install --id Apple.iCloud -e`）
+1. [Simplenote](https://simplenote.com/)インストール（`winget install --id Automattic.Simplenote -e`）
+1. [Google Drive for Desktop](https://www.google.com/intl/ja/drive/download/)インストール（`winget install --id Google.GoogleDrive -e`）
     ※旧称「Backup and Sync」から名称変更されている
-1. [draw.io Diagrams](https://www.microsoft.com/store/apps/9mvvszk43qqw)インストール
+1. [draw.io Diagrams](https://www.microsoft.com/store/apps/9mvvszk43qqw)インストール（`winget install --id JGraph.Draw -e`）
