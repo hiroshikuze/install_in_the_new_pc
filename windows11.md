@@ -33,12 +33,15 @@ code --install-extension shardulm94.trailing-spaces
 任意インストール分は以下の通りです。
 
 ```powershell
-winget install --id LINE.LINE               -e --silent
-winget install --id Zoom.Zoom               -e --silent
-winget install --id Apple.iCloud            -e --silent
-winget install --id Automattic.Simplenote   -e --silent
-winget install --id Google.GoogleDrive      -e --silent
-winget install --id JGraph.Draw             -e --silent
+winget install --id LINE.LINE                  -e --silent
+winget install --id Zoom.Zoom                  -e --silent
+winget install --id Apple.iCloud               -e --silent
+winget install --id Automattic.Simplenote      -e --silent
+winget install --id Google.GoogleDrive         -e --silent
+winget install --id JGraph.Draw                -e --silent
+winget install --id Mozilla.Firefox            -e --silent
+winget install --id TeraTermProject.teraterm   -e --silent
+winget install --id TimKosse.FileZilla.Client  -e --silent
 ```
 
 > **wingetで対応していないもの**
@@ -79,6 +82,9 @@ winget install --id JGraph.Draw             -e --silent
     ・Copilot（不要であれば 設定→Copilot からオフ）
     ・OneDriveの自動バックアップ（不要であれば 設定→OneDrive から無効化）
     ・ウィジェット（不要であれば 設定→個人用設定→タスクバー からオフ）
+1. **エクスプローラーの表示設定**
+    ・隠しファイルを表示する：エクスプローラー → 表示 → 表示 → 隠しファイル
+    ・ファイルの拡張子を表示する：エクスプローラー → 表示 → 表示 → ファイル名拡張子
 1. [Chrome](https://www.google.com/intl/ja_jp/chrome/)インストール（`winget install --id Google.Chrome -e`）
 1. 既存のブラウザをChromeにする
 1. タスクバーにChrome追加
@@ -113,3 +119,7 @@ winget install --id JGraph.Draw             -e --silent
 1. [Google Drive for Desktop](https://www.google.com/intl/ja/drive/download/)インストール（`winget install --id Google.GoogleDrive -e`）
     ※旧称「Backup and Sync」から名称変更されている
 1. [draw.io Diagrams](https://www.microsoft.com/store/apps/9mvvszk43qqw)インストール（`winget install --id JGraph.Draw -e`）
+1. [Firefox](https://www.mozilla.org/ja/firefox/)インストール（`winget install --id Mozilla.Firefox -e`）
+1. [TeraTerm](https://github.com/TeraTermProject/teraterm/releases)インストール（`winget install --id TeraTermProject.teraterm -e`）
+1. [FileZilla](https://filezilla-project.org/)インストール（`winget install --id TimKosse.FileZilla.Client -e`）
+    ※wingetでのインストールが失敗する場合は[公式サイト](https://filezilla-project.org/)から手動でダウンロード
