@@ -1,4 +1,5 @@
-# Initial setup of a new PC.
+# Initial setup of a new PC
+
 About the software and settings you want to install when you purchase a new PC.
 
 [![View Guide](https://img.shields.io/badge/View%20Guide-GitHub%20Pages-0078d7?style=for-the-badge&logo=github)](https://hiroshikuze.github.io/initial-setup-of-new-PC/)

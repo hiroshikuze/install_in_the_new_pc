@@ -8,24 +8,29 @@ This is a **pure documentation repository** — a personal reference guide for s
 
 - **Owner**: Hiroshi Kuze
 - **License**: MIT
-- **Live site**: https://hiroshikuze.github.io/install_in_the_new_pc/
+- **Live site**: <https://hiroshikuze.github.io/install_in_the_new_pc/>
 - **Language**: Content is primarily written in Japanese; README is in English
 
 ## Repository Structure
 
-```
+```text
 install_in_the_new_pc/
-├── README.md       # English intro, links to the live site, and sponsor links
-├── index.md        # Jekyll site entry point — lists available guides
-├── windows10.md    # Main guide: Windows 10 setup steps (Japanese)
-├── _config.yml     # Jekyll configuration (theme: jekyll-theme-tactile)
-└── LICENSE         # MIT License
+├── README.md           # English intro, links to the live site, and sponsor links
+├── _config.yml         # Jekyll configuration (theme: jekyll-theme-tactile)
+├── LICENSE             # MIT License
+└── docs/
+    ├── index.md              # Jekyll site entry point — lists available guides
+    ├── windows10.md          # Windows 10 setup guide (Japanese)
+    ├── windows11.md          # Windows 11 setup guide with winget (Japanese)
+    ├── macos26.md            # macOS 26 Tahoe setup guide with Homebrew (Japanese)
+    └── vscode-extensions.md  # VS Code extensions common across all OS (Japanese)
 ```
 
 ## Content Summary
 
-### windows10.md
-The core document, written in Japanese. Organized into three sections:
+### docs/windows10.md
+
+Windows 10 setup guide, written in Japanese. Organized into three sections:
 
 1. **基本設定 (Basic Configuration)**
    - Creating a USB recovery drive (16 GB)
@@ -57,10 +62,18 @@ The core document, written in Japanese. Organized into three sections:
    - Google Drive Backup and Sync
    - draw.io Diagrams
 
+### docs/windows11.md
+
+Windows 11 setup guide, written in Japanese. Adds winget (Windows Package Manager) bulk install commands at the top, then covers the same three sections as windows10.md with Windows 11-specific notes (e.g., OOBE/BYPASSNRO removal in 24H2, Copilot/OneDrive cleanup, WSL2 default, Explorer native archive support).
+
+### docs/macos26.md
+
+macOS 26 Tahoe setup guide, written in Japanese. Mirrors the Windows guides in structure but uses Homebrew for bulk installs. Covers macOS-specific equivalents: DiffMerge (WinMerge), Clipy (CLCL), The Unarchiver, CotEditor (Sakura Editor), iTerm2 (TeraTerm). Notes differences from Windows 11 (no forced Apple ID, no LAN disconnect needed, Spotlight as Everything alternative).
+
 ## Tech Stack
 
 | Component | Technology |
-|-----------|------------|
+| --------- | ---------- |
 | Static site generator | Jekyll |
 | Hosting | GitHub Pages |
 | Theme | jekyll-theme-tactile |
@@ -74,23 +87,31 @@ The core document, written in Japanese. Organized into three sections:
 Since this is a documentation-only repository, the workflow is simple:
 
 ### Editing Content
-1. Edit the relevant Markdown file (most likely `windows10.md` or `index.md`)
+
+1. Edit the relevant Markdown file under `docs/` (e.g., `docs/windows11.md`, `docs/macos26.md`)
 2. Follow existing formatting conventions (numbered lists, section headers in Japanese for content pages)
 3. Commit with a descriptive message
+4. Update `CLAUDE.md` if the change involves structural additions or important conventions
 
 ### Adding New Guides
-1. Create a new `.md` file (e.g., `windows11.md`)
-2. Add a link to it in `index.md`
-3. Follow the same section structure as `windows10.md`
+
+1. Create a new `.md` file under `docs/` (e.g., `docs/windows12.md`)
+2. Add a link to it in `docs/index.md`
+3. Follow the same section structure as `docs/windows11.md` (three sections: 基本設定, 自分としては必須設定, PCによって要りそうならインストール)
+4. Update `CLAUDE.md` to document the new file's content summary
 
 ### Local Jekyll Preview (optional)
+
 If Jekyll is installed locally:
+
 ```bash
 bundle exec jekyll serve
 ```
+
 Then visit `http://localhost:4000`.
 
 ### Deploying
+
 Push to the `main` branch. GitHub Pages automatically builds and deploys the site.
 
 ## Conventions
@@ -108,12 +129,15 @@ Active development branches follow the pattern: `claude/<description>-<session-i
 ## What AI Assistants Should and Should Not Do
 
 **Do:**
-- Add or update software recommendations in `windows10.md`
-- Create new OS/platform guide files and link them from `index.md`
+
+- Add or update software recommendations in files under `docs/`
+- Create new OS/platform guide files under `docs/` and link them from `docs/index.md`
 - Fix broken links or outdated software references
 - Improve clarity of Japanese text or English descriptions
+- Update `CLAUDE.md` when making structural changes (new files, directory moves, important conventions)
 
 **Do not:**
+
 - Add build tools, package managers, or CI/CD — this repo intentionally has none
 - Introduce non-Markdown formats for content
 - Change the Jekyll theme without discussion
