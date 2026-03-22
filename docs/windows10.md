@@ -50,4 +50,4 @@
 
 ---
 
-[← ガイド一覧に戻る](index.md) ／ [README](../README.md)
+[← ガイド一覧に戻る](index.md) ／ [README](https://github.com/hiroshikuze/install_in_the_new_pc/blob/main/README.md)

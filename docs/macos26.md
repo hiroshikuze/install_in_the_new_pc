@@ -105,7 +105,7 @@ brew install --cask filezilla
     1. Finderウィンドウを開き、保存した `.app` ファイルを **⌘ を押しながらFinderのツールバーにドラッグ** して登録する
     - 登録後はツールバーのボタンをクリックするだけで、現在開いているフォルダーをターミナルで開ける
 1. **不要な機能・通知の整理**
-    - Siri（不要であればシステム設定 → Siriと音声入力からオフ）
+    - Siri（不要であればシステム設定→Siriと音声入力からオフ）
     - スポットライトの検索対象（システム設定 → Siriとスポットライト → 検索結果で絞り込む）
     - 通知（システム設定 → 通知で各アプリを調整）
 1. **Dockの整理**
@@ -159,4 +159,4 @@ brew install --cask filezilla
 
 ---
 
-[← ガイド一覧に戻る](index.md) ／ [README](../README.md)
+[← ガイド一覧に戻る](index.md) ／ [README](https://github.com/hiroshikuze/install_in_the_new_pc/blob/main/README.md)
