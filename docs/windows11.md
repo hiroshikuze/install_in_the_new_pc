@@ -26,7 +26,7 @@ winget install --id dotPDN.PaintDotNet      -e --silent
 ```
 
 > パッケージIDは `winget search <ソフト名>` で検索して確認できます。
-
+>
 > 🧩 VS Code拡張機能は別途インストールが必要です → [VS Code拡張機能](vscode-extensions.md)
 
 任意インストール分は以下の通りです。
@@ -76,7 +76,7 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 
 ## 🛠️ 自分としては必須設定
 
-1. Windowsの機能有効化（→[一括コマンド参照](#コマンドで一括インストールwinget)）
+1. Windowsの機能有効化（→[一括コマンド参照](#-コマンドで一括インストールwinget)）
     - Linux用Windowsサブシステム：`wsl --install`
     - Telnetクライアント：`dism /online /Enable-Feature /FeatureName:TelnetClient /NoRestart`
     - 仮想マシンプラットフォーム：`dism /online /Enable-Feature /FeatureName:VirtualMachinePlatform /All /NoRestart`
@@ -127,4 +127,4 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 
 ---
 
-[← ガイド一覧に戻る](index.md) ／ [README](../README.md)
+[← ガイド一覧に戻る](index.md) ／ [README](https://github.com/hiroshikuze/initial-setup-of-new-PC/)

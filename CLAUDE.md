@@ -8,7 +8,7 @@ This is a **pure documentation repository** — a personal reference guide for s
 
 - **Owner**: Hiroshi Kuze
 - **License**: MIT
-- **Live site**: <https://hiroshikuze.github.io/install_in_the_new_pc/>
+- **Live site**: [https://hiroshikuze.github.io/install_in_the_new_pc/](https://hiroshikuze.github.io/install_in_the_new_pc/)
 - **Language**: Content is primarily written in Japanese; README is in English
 
 ## Repository Structure
@@ -97,7 +97,7 @@ Since this is a documentation-only repository, the workflow is simple:
 
 1. Create a new `.md` file under `docs/` (e.g., `docs/windows12.md`)
 2. Add a link to it in `docs/index.md`
-3. Follow the same section structure as `docs/windows11.md` (three sections: 基本設定, 自分としては必須設定, PCによって要りそうならインストール)
+3. Follow the same section structure as `docs/windows11.md`（three sections: 基本設定、自分としては必須設定、PCによって要りそうならインストール）
 4. Update `CLAUDE.md` to document the new file's content summary
 
 ### Local Jekyll Preview (optional)

@@ -1,6 +1,6 @@
 # Visual Studio Code 拡張機能
 
-Windows・macOS 共通で導入している VS Code 拡張機能の一覧です。
+Windows・macOS共通で導入しているVS Code拡張機能の一覧です。
 
 ## ⚡ 一括インストール
 
@@ -38,4 +38,4 @@ code --install-extension esbenp.prettier-vscode
 
 ---
 
-[← ガイド一覧に戻る](index.md) ／ [README](../README.md)
+[← ガイド一覧に戻る](index.md) ／ [README](https://github.com/hiroshikuze/initial-setup-of-new-PC/)

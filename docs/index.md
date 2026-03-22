@@ -9,4 +9,4 @@ About the software and settings you want to install when you purchase a new PC.
 
 ---
 
-[README](../README.md)
+[README](https://github.com/hiroshikuze/initial-setup-of-new-PC/)
