@@ -6,7 +6,7 @@
 
 Windows 11には **winget**（Windowsパッケージマネージャー）が標準搭載されており、ブラウザでダウンロードページを探す手間なくソフトをインストールできます。
 
-PowerShell またはターミナルを**管理者として実行**し、以下をまとめて貼り付けると「自分としては必須設定」のソフトを一括インストールできます。
+PowerShellまたはターミナルを**管理者として実行**し、以下をまとめて貼り付けると「自分としては必須設定」のソフトを一括インストールできます。
 
 ```powershell
 # Windows機能の有効化
@@ -23,12 +23,10 @@ winget install --id 7zip.7zip               -e --silent
 winget install --id SakuraEditor.SakuraEditor -e --silent
 winget install --id dotPDN.PaintDotNet      -e --silent
 
-# VS Code拡張機能
-code --install-extension ICS.japanese-proofreading
-code --install-extension shardulm94.trailing-spaces
 ```
 
 > パッケージIDは `winget search <ソフト名>` で検索して確認できます。
+> VS Code拡張機能は→[VS Code拡張機能](vscode-extensions.md)
 
 任意インストール分は以下の通りです。
 
@@ -45,6 +43,7 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 ```
 
 > **wingetで対応していないもの**
+>
 > - CLCL（winget未対応のため[公式サイト](https://www.nakka.com/soft/clcl/)からダウンロード）
 > - Chrome Remote Desktop（Chromeの[拡張機能ページ](https://remotedesktop.google.com/access)からインストール）
 
@@ -70,6 +69,7 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 1. 手持ちのプリンター用ドライバーのインストール
 
 > **Windows 10との主な違い**
+>
 > - Internet Explorerは完全に削除されたためショートカット削除は不要
 > - タスクバーのカスタマイズ方法が変わっている（スタートボタンが中央配置）
 
@@ -80,9 +80,9 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
     - Telnetクライアント：`dism /online /Enable-Feature /FeatureName:TelnetClient /NoRestart`
     - 仮想マシンプラットフォーム：`dism /online /Enable-Feature /FeatureName:VirtualMachinePlatform /All /NoRestart`
 1. **不要なスタートアップ・機能の整理**
-    - Copilot（不要であれば 設定→Copilot からオフ）
-    - OneDriveの自動バックアップ（不要であれば 設定→OneDrive から無効化）
-    - ウィジェット（不要であれば 設定→個人用設定→タスクバー からオフ）
+    - Copilot（不要であれば設定→Copilotからオフ）
+    - OneDriveの自動バックアップ（不要であれば設定→OneDriveから無効化）
+    - ウィジェット（不要であれば設定→個人用設定→タスクバーからオフ）
 1. **エクスプローラーの表示設定**
     - 隠しファイルを表示する：エクスプローラー → 表示 → 表示 → 隠しファイル
     - ファイルの拡張子を表示する：エクスプローラー → 表示 → 表示 → ファイル名拡張子
@@ -92,20 +92,18 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 1. Chromeが英語になっていたら日本語化
 1. Chrome Remote Desktopインストール（Chromeの[拡張機能ページ](https://remotedesktop.google.com/access)から）
 1. [Visual Studio Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)導入（`winget install --id Microsoft.VisualStudioCode -e`）
-    - 拡張機能の導入（`code --install-extension` で一括インストール可能）
-      - [テキスト校正くん](https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading)：`code --install-extension ICS.japanese-proofreading`
-      - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)：`code --install-extension shardulm94.trailing-spaces`
+    - 拡張機能の導入（→[VS Code拡張機能](vscode-extensions.md)）
 1. [WinMerge](https://winmergejp.bitbucket.io/)インストール（`winget install --id WinMerge.WinMerge -e`）
 1. [Everything](https://forest.watch.impress.co.jp/library/software/everything/)インストール（`winget install --id voidtools.Everything -e`）
 1. [CLCL](https://www.nakka.com/soft/clcl/)インストール（winget未対応のため公式サイトから）
 1. 圧縮・展開ソフトインストール
     ※Windows 11 22H2以降はエクスプローラーで7z・tar・rarなどを標準で展開可能。
-    ZIP作成も標準対応のため、用途によっては追加ソフト不要。
-    （必要なら[7-Zip](https://sevenzip.osdn.jp/)：`winget install --id 7zip.7zip -e`）
+    ZIP作成も標準対応のため、用途によっては追加ソフト不要（必要なら[7-Zip](https://sevenzip.osdn.jp/)：`winget install --id 7zip.7zip -e`）。
 1. 軽量エディタインストール（`winget install --id SakuraEditor.SakuraEditor -e`）
 1. 軽量お絵かきソフト（`winget install --id dotPDN.PaintDotNet -e`）
 
 > **Windows 10との主な違い**
+>
 > - WSL2がデフォルトになり、`wsl --install` 一発でUbuntuまで導入完了
 > - WindowsのdismコマンドやPowerShellでWindows機能を有効化できる
 > - VS Code拡張機能は `code --install-extension` でCLIインストール可能
@@ -125,3 +123,7 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 1. [TeraTerm](https://github.com/TeraTermProject/teraterm/releases)インストール（`winget install --id TeraTermProject.teraterm -e`）
 1. [FileZilla](https://filezilla-project.org/)インストール（`winget install --id TimKosse.FileZilla.Client -e`）
     ※wingetでのインストールが失敗する場合は[公式サイト](https://filezilla-project.org/)から手動でダウンロード
+
+---
+
+[← ガイド一覧に戻る](index.md) ／ [README](../README.md)

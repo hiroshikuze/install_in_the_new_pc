@@ -31,9 +31,7 @@
 1. Chromeが英語になっていたら日本語化
 1. Chrome remote desktopインストール
 1. [Visual Studio Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)導入
-    - 拡張機能の導入
-      - [テキスト校正くん](https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading)インストール
-      - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)インストール
+    - 拡張機能の導入（→[VS Code拡張機能](vscode-extensions.md)）
 1. [WinMerge](https://winmergejp.bitbucket.io/)インストール
 1. [Everything](https://forest.watch.impress.co.jp/library/software/everything/)インストール
 1. [CLCL](https://www.nakka.com/soft/clcl/)インストール
@@ -49,3 +47,7 @@
 1. [Simplenote](https://simplenote.com/)インストール
 1. [Backup and Sync from google](https://www.google.com/intl/ja/drive/download/)インストール
 1. [draw.io Diagrams](https://www.microsoft.com/en-us/p/drawio-diagrams/9mvvszk43qqw?activetab=pivot:overviewtab)インストール
+
+---
+
+[← ガイド一覧に戻る](index.md) ／ [README](../README.md)
