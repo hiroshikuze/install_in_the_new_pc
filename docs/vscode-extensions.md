@@ -2,7 +2,7 @@
 
 Windows・macOS 共通で導入している VS Code 拡張機能の一覧です。
 
-## 一括インストール
+## ⚡ 一括インストール
 
 ターミナル（PowerShell）で以下を実行するとまとめてインストールできます。
 
@@ -17,7 +17,7 @@ code --install-extension ionutvmi.path-autocomplete
 code --install-extension esbenp.prettier-vscode
 ```
 
-## 拡張機能一覧
+## 🧩 拡張機能一覧
 
 - [テキスト校正くん](https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading)（`ICS.japanese-proofreading`）
   日本語文書の文法・表記をチェックする校正支援ツール。

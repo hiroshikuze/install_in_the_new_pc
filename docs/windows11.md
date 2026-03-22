@@ -2,7 +2,7 @@
 
 新しいWindows 11のHomeやProfessionalが入ったPCを買ったときにインストールしたいソフトや設定のまとめです（2026年3月時点）
 
-## コマンドで一括インストール（winget）
+## ⚡ コマンドで一括インストール（winget）
 
 Windows 11には **winget**（Windowsパッケージマネージャー）が標準搭載されており、ブラウザでダウンロードページを探す手間なくソフトをインストールできます。
 
@@ -26,7 +26,8 @@ winget install --id dotPDN.PaintDotNet      -e --silent
 ```
 
 > パッケージIDは `winget search <ソフト名>` で検索して確認できます。
-> VS Code拡張機能は→[VS Code拡張機能](vscode-extensions.md)
+
+> 🧩 VS Code拡張機能は別途インストールが必要です → [VS Code拡張機能](vscode-extensions.md)
 
 任意インストール分は以下の通りです。
 
@@ -49,7 +50,7 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 
 ---
 
-## 基本設定
+## ⚙️ 基本設定
 
 1. 回復ドライブ用のUSBメモリ16GBをあらかじめ用意する
 1. Bluetoothキーボードとマウスを使う場合でも、とりあえずUSB接続のキーボードとマウスを接続する
@@ -73,7 +74,7 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 > - Internet Explorerは完全に削除されたためショートカット削除は不要
 > - タスクバーのカスタマイズ方法が変わっている（スタートボタンが中央配置）
 
-## 自分としては必須設定
+## 🛠️ 自分としては必須設定
 
 1. Windowsの機能有効化（→[一括コマンド参照](#コマンドで一括インストールwinget)）
     - Linux用Windowsサブシステム：`wsl --install`
@@ -92,7 +93,7 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 1. Chromeが英語になっていたら日本語化
 1. Chrome Remote Desktopインストール（Chromeの[拡張機能ページ](https://remotedesktop.google.com/access)から）
 1. [Visual Studio Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)導入（`winget install --id Microsoft.VisualStudioCode -e`）
-    - 拡張機能の導入（→[VS Code拡張機能](vscode-extensions.md)）
+1. 🧩 [VS Code拡張機能](vscode-extensions.md)のインストール
 1. [WinMerge](https://winmergejp.bitbucket.io/)インストール（`winget install --id WinMerge.WinMerge -e`）
 1. [Everything](https://forest.watch.impress.co.jp/library/software/everything/)インストール（`winget install --id voidtools.Everything -e`）
 1. [CLCL](https://www.nakka.com/soft/clcl/)インストール（winget未対応のため公式サイトから）
@@ -110,7 +111,7 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 > - ZIP以外の圧縮形式（7z・tar・rar等）がエクスプローラーで標準展開可能になったためLhasa等が不要になるケースが多い
 > - CopilotやOneDrive自動バックアップ等、不要な機能を意図的にオフにする手順が増えた
 
-## PCによって要りそうならインストール
+## 📦 PCによって要りそうならインストール
 
 1. [Windows用LINE](https://line.me/ja/)インストール（`winget install --id LINE.LINE -e`）
 1. [Zoomクライアント](https://zoom.us/jp-jp/meetings.html)インストール（`winget install --id Zoom.Zoom -e`）
