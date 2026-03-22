@@ -55,7 +55,8 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 1. 回復ドライブ用のUSBメモリ16GBをあらかじめ用意する
 1. Bluetoothキーボードとマウスを使う場合でも、とりあえずUSB接続のキーボードとマウスを接続する
 1. **【注意】LANを抜いて起動**
-   ※Windows 11 HomeではMicrosoftアカウントのサインインが原則必須となっている。ローカルアカウントで使いたい場合はProエディションを選ぶことを推奨。
+   ※Windows 11 HomeではMicrosoftアカウントのサインインが原則必須となっている。
+   ローカルアカウントで使いたい場合はProエディションを選ぶことを推奨。
    ※Homeでもインターネット未接続状態で初期セットアップを進めることでローカルアカウントを作成できる場合があるが、バージョンによって挙動が異なる。
    ※Windows 11 24H2以降は `OOBE\BYPASSNRO` コマンドが使えなくなったため、LAN（および無線LAN）を物理的に切断した状態で起動する方法が現実的。
 1. ログインアカウントを作る
@@ -75,30 +76,31 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 ## 自分としては必須設定
 
 1. Windowsの機能有効化（→[一括コマンド参照](#コマンドで一括インストールwinget)）
-    ・Linux用Windowsサブシステム：`wsl --install`
-    ・Telnetクライアント：`dism /online /Enable-Feature /FeatureName:TelnetClient /NoRestart`
-    ・仮想マシンプラットフォーム：`dism /online /Enable-Feature /FeatureName:VirtualMachinePlatform /All /NoRestart`
+    - Linux用Windowsサブシステム：`wsl --install`
+    - Telnetクライアント：`dism /online /Enable-Feature /FeatureName:TelnetClient /NoRestart`
+    - 仮想マシンプラットフォーム：`dism /online /Enable-Feature /FeatureName:VirtualMachinePlatform /All /NoRestart`
 1. **不要なスタートアップ・機能の整理**
-    ・Copilot（不要であれば 設定→Copilot からオフ）
-    ・OneDriveの自動バックアップ（不要であれば 設定→OneDrive から無効化）
-    ・ウィジェット（不要であれば 設定→個人用設定→タスクバー からオフ）
+    - Copilot（不要であれば 設定→Copilot からオフ）
+    - OneDriveの自動バックアップ（不要であれば 設定→OneDrive から無効化）
+    - ウィジェット（不要であれば 設定→個人用設定→タスクバー からオフ）
 1. **エクスプローラーの表示設定**
-    ・隠しファイルを表示する：エクスプローラー → 表示 → 表示 → 隠しファイル
-    ・ファイルの拡張子を表示する：エクスプローラー → 表示 → 表示 → ファイル名拡張子
+    - 隠しファイルを表示する：エクスプローラー → 表示 → 表示 → 隠しファイル
+    - ファイルの拡張子を表示する：エクスプローラー → 表示 → 表示 → ファイル名拡張子
 1. [Chrome](https://www.google.com/intl/ja_jp/chrome/)インストール（`winget install --id Google.Chrome -e`）
 1. 既存のブラウザをChromeにする
 1. タスクバーにChrome追加
 1. Chromeが英語になっていたら日本語化
 1. Chrome Remote Desktopインストール（Chromeの[拡張機能ページ](https://remotedesktop.google.com/access)から）
 1. [Visual Studio Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)導入（`winget install --id Microsoft.VisualStudioCode -e`）
-    拡張機能の導入（`code --install-extension` で一括インストール可能）
-    ・[テキスト校正くん](https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading)：`code --install-extension ICS.japanese-proofreading`
-    ・[Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)：`code --install-extension shardulm94.trailing-spaces`
+    - 拡張機能の導入（`code --install-extension` で一括インストール可能）
+      - [テキスト校正くん](https://marketplace.visualstudio.com/items?itemName=ICS.japanese-proofreading)：`code --install-extension ICS.japanese-proofreading`
+      - [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces)：`code --install-extension shardulm94.trailing-spaces`
 1. [WinMerge](https://winmergejp.bitbucket.io/)インストール（`winget install --id WinMerge.WinMerge -e`）
 1. [Everything](https://forest.watch.impress.co.jp/library/software/everything/)インストール（`winget install --id voidtools.Everything -e`）
 1. [CLCL](https://www.nakka.com/soft/clcl/)インストール（winget未対応のため公式サイトから）
 1. 圧縮・展開ソフトインストール
-    ※Windows 11 22H2以降はエクスプローラーで7z・tar・rarなどを標準で展開可能。ZIP作成も標準対応のため、用途によっては追加ソフト不要。
+    ※Windows 11 22H2以降はエクスプローラーで7z・tar・rarなどを標準で展開可能。
+    ZIP作成も標準対応のため、用途によっては追加ソフト不要。
     （必要なら[7-Zip](https://sevenzip.osdn.jp/)：`winget install --id 7zip.7zip -e`）
 1. 軽量エディタインストール（`winget install --id SakuraEditor.SakuraEditor -e`）
 1. 軽量お絵かきソフト（`winget install --id dotPDN.PaintDotNet -e`）
