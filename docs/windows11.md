@@ -29,19 +29,7 @@ winget install --id dotPDN.PaintDotNet      -e --silent
 >
 > 🧩 VS Code拡張機能は別途インストールが必要です → [VS Code拡張機能](vscode-extensions.md)
 
-任意インストール分は以下の通りです。
-
-```powershell
-winget install --id LINE.LINE                  -e --silent
-winget install --id Zoom.Zoom                  -e --silent
-winget install --id Apple.iCloud               -e --silent
-winget install --id Automattic.Simplenote      -e --silent
-winget install --id Google.GoogleDrive         -e --silent
-winget install --id JGraph.Draw                -e --silent
-winget install --id Mozilla.Firefox            -e --silent
-winget install --id TeraTermProject.teraterm   -e --silent
-winget install --id TimKosse.FileZilla.Client  -e --silent
-```
+> 任意インストール分の一括コマンドは後述の「[PCによって要りそうならインストール](#-pcによって要りそうならインストール)」セクションを参照してください。
 
 > **wingetで対応していないもの**
 >
@@ -54,11 +42,10 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 
 1. 回復ドライブ用のUSBメモリ16GBをあらかじめ用意する
 1. Bluetoothキーボードとマウスを使う場合でも、とりあえずUSB接続のキーボードとマウスを接続する
-1. **【注意】LANを抜いて起動**
-   ※Windows 11 HomeではMicrosoftアカウントのサインインが原則必須となっている。
-   ローカルアカウントで使いたい場合はProエディションを選ぶことを推奨。
-   ※Homeでもインターネット未接続状態で初期セットアップを進めることでローカルアカウントを作成できる場合があるが、バージョンによって挙動が異なる。
-   ※Windows 11 24H2以降は `OOBE\BYPASSNRO` コマンドが使えなくなったため、LAN（および無線LAN）を物理的に切断した状態で起動する方法が現実的。
+1. **【注意】ローカルアカウントでセットアップする場合**（Microsoftアカウントを紐づけたくない場合）
+   ※Windows 11 HomeではMicrosoftアカウントのサインインが原則必須となっている。ローカルアカウントで使いたい場合はProエディションを選ぶことを推奨。
+   - **バージョン23H2以前**：LANを抜いた状態で起動 → セットアップ中のネットワーク接続要求画面で `Shift + F10` を押してコマンドプロンプトを開き、`OOBE\BYPASSNRO` を入力してEnter → 自動再起動後に「インターネットに接続していません」が選択可能になる
+   - **バージョン24H2以降**（BYPASSNROが廃止されたビルドの場合）：Microsoftアカウント入力画面で `Shift + F10` を押してコマンドプロンプトを開き、`start ms-cxh:localonly` を入力してEnter → ローカルアカウント作成ダイアログが表示される
 1. ログインアカウントを作る
 1. LANを刺し直す
 1. ハードウェアキーボードが英語なら日本語に変更
@@ -84,6 +71,12 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
     - Copilot（不要であれば設定→Copilotからオフ）
     - OneDriveの自動バックアップ（不要であれば設定→OneDriveから無効化）
     - ウィジェット（不要であれば設定→個人用設定→タスクバーからオフ）
+1. **Microsoftの広告・プロモーション通知の無効化**
+    - 個人広告ID：設定 → プライバシーとセキュリティ → 全般 → 「広告IDを使って、よりカスタマイズされた広告を表示する」をオフ
+    - Windowsのヒントと提案：設定 → システム → 通知 → 「Windowsを使用するときにヒントと提案を取得する」をオフ
+    - スタート画面のおすすめ：設定 → 個人用設定 → スタート → 「ヒント・アプリのプロモーション・その他のおすすめを表示する」をオフ
+    - ロック画面の広告：設定 → 個人用設定 → ロック画面 → 「ロック画面に楽しいヒントやトリックを表示する」をオフ
+    - Microsoft 365入会案内（再起動時に表示されるもの）：設定 → アプリ → スタートアップ → Microsoft 365関連エントリをオフ（またはタスクマネージャー `Ctrl + Shift + Esc` → スタートアップアプリ で無効化）
 1. **エクスプローラーの表示設定**
     - 隠しファイルを表示する：エクスプローラー → 表示 → 表示 → 隠しファイル
     - ファイルの拡張子を表示する：エクスプローラー → 表示 → 表示 → ファイル名拡張子
@@ -112,6 +105,20 @@ winget install --id TimKosse.FileZilla.Client  -e --silent
 > - CopilotやOneDrive自動バックアップ等、不要な機能を意図的にオフにする手順が増えた
 
 ## 📦 PCによって要りそうならインストール
+
+まとめてインストールする場合は以下を貼り付けてください。
+
+```powershell
+winget install --id LINE.LINE                  -e --silent
+winget install --id Zoom.Zoom                  -e --silent
+winget install --id Apple.iCloud               -e --silent
+winget install --id Automattic.Simplenote      -e --silent
+winget install --id Google.GoogleDrive         -e --silent
+winget install --id JGraph.Draw                -e --silent
+winget install --id Mozilla.Firefox            -e --silent
+winget install --id TeraTermProject.teraterm   -e --silent
+winget install --id TimKosse.FileZilla.Client  -e --silent
+```
 
 1. [Windows用LINE](https://line.me/ja/)インストール（`winget install --id LINE.LINE -e`）
 1. [Zoomクライアント](https://zoom.us/jp-jp/meetings.html)インストール（`winget install --id Zoom.Zoom -e`）
