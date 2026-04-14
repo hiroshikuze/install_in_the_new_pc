@@ -16,9 +16,16 @@ This is a **pure documentation repository** — a personal reference guide for s
 ```text
 install_in_the_new_pc/
 ├── README.md           # English intro, links to the live site, and sponsor links
-├── _config.yml         # Jekyll configuration (theme: jekyll-theme-tactile)
 ├── LICENSE             # MIT License
 └── docs/
+    ├── _config.yml           # Jekyll configuration (theme: jekyll-theme-slate)
+    ├── _includes/
+    │   └── head-custom.html  # Injects CSS/JS into every page <head>
+    ├── assets/
+    │   ├── css/
+    │   │   └── changelog-modal.css  # What's New modal styles
+    │   └── js/
+    │       └── changelog-modal.js   # What's New modal logic + CHANGELOG constant
     ├── index.md              # Jekyll site entry point — lists available guides
     ├── windows10.md          # Windows 10 setup guide (Japanese)
     ├── windows11.md          # Windows 11 setup guide with winget (Japanese)
@@ -76,7 +83,7 @@ macOS 26 Tahoe setup guide, written in Japanese. Mirrors the Windows guides in s
 | --------- | ---------- |
 | Static site generator | Jekyll |
 | Hosting | GitHub Pages |
-| Theme | jekyll-theme-tactile |
+| Theme | jekyll-theme-slate |
 | Content format | Markdown |
 | Version control | Git |
 
@@ -109,6 +116,17 @@ bundle exec jekyll serve
 ```
 
 Then visit `http://localhost:4000`.
+
+### Updating the What's New Modal
+
+When making user-facing changes (new content, fixed procedures, added features), update the `CHANGELOG` constant at the top of `docs/assets/js/changelog-modal.js`:
+
+1. Bump the `version` string (e.g., `"1.1.0"` → `"1.2.0"`)
+2. Set `date` to today's date (`YYYY-MM-DD`)
+3. Add bullet points to `items` describing what changed — **user-visible changes only** (skip internal refactors, code cleanup, etc.)
+4. Keep the old entry in the array so users can scroll through history
+
+Do **not** update the CHANGELOG for changes that users won't notice (e.g., whitespace fixes, CLAUDE.md updates, CI changes).
 
 ### Deploying
 
